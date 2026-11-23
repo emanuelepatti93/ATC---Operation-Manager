@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATC Operation Manager</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f172a;
+      --panel: #111827;
+      --line: #243244;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+      color: var(--text);
+    }
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 64px 1fr 28px;
+    }
+    .topbar,
+    .statusbar {
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      background: rgba(17, 24, 39, 0.92);
+      border-color: var(--line);
+    }
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .statusbar {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      justify-content: space-between;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 0;
+    }
+    .sidebar {
+      background: rgba(15, 23, 42, 0.95);
+      border-right: 1px solid var(--line);
+      padding: 16px;
+    }
+    .sidebar h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .nav {
+      display: grid;
+      gap: 8px;
+    }
+    .nav a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(17, 24, 39, 0.72);
+    }
+    .nav a:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, .2) inset;
+    }
+    .main {
+      padding: 18px;
+      min-width: 0;
+    }
+    .card {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 240px;
+    }
+    .card h1 { margin: 0 0 8px; font-size: 24px; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.5; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .tile {
+      background: rgba(17, 24, 39, 0.75);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      min-height: 100px;
+    }
+    .tile strong { display: block; margin-bottom: 6px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    @media (max-width: 900px) {
+      .content { grid-template-columns: 1fr; }
+      .sidebar { border-right: 0; border-bottom: 1px solid var(--line); }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">ATC Operation Manager</header>
+    <div class="content">
+      <aside class="sidebar">
+        <h2>Menu</h2>
+        <nav class="nav">
+          <a href="#">Dashboard</a>
+          <a href="#">Presenze</a>
+          <a href="#">Turni</a>
+          <a href="#">Posizioni</a>
+          <a href="#">Report</a>
+          <a href="#">Impostazioni</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <section class="card">
+          <h1>Interfaccia iniziale</h1>
+          <p>Questa è una vista HTML di anteprima della struttura del gestionale. L’interfaccia reale continua nel progetto PySide6 su GitHub.</p>
+          <div class="grid">
+            <div class="tile"><strong>Dashboard</strong><span>Panoramica rapida</span></div>
+            <div class="tile"><strong>Turni</strong><span>Gestione turnazione</span></div>
+            <div class="tile"><strong>Report</strong><span>Esportazioni e riepiloghi</span></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="statusbar"><span>Pronto</span><span>ATC Operation Manager</span></footer>
+  </div>
+</body>
+</html>
