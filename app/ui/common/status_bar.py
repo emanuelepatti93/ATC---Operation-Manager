@@ -10,4 +10,6 @@ class StatusBar(QStatusBar):
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent)
+        self.setObjectName("StatusBar")
         self.addPermanentWidget(QLabel("Pronto"))
+        self.addPermanentWidget(QLabel("ATC Operation Manager"))
