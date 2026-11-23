@@ -1,0 +1,1 @@
+"""Top bar UI component."""
